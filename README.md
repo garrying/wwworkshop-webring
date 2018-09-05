@@ -32,7 +32,7 @@ This repository contains the contents and files for [wwworkshop.org](https://www
 <details>
 <summary>Licence & Attribution</summary>
 
-- [GNU General Public License v3.0](./LICENSE.md)
+- [GNU General Public License v3.0](./LICENSE)
 - Unless otherwise indicated, Course content is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
 </details>
 
