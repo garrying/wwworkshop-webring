@@ -1,5 +1,5 @@
 # WWWorkshop
-#### GDES-3091 Interactive Media: Web (2018 Fall)
+### GDES-3091 Interactive Media: Web (2018 Fall)
 
 - **Time:** Fridays, 8:30am – 11:30am
 - **Location:**  Room 558, [100 McCaul Street/Sharp Centre](https://goo.gl/maps/FvQJx42HD262)
@@ -9,6 +9,32 @@
 Learn how to weave a range of online technologies into engaging interactive experiences. In this course, students will learn the basics of web technologies that are fundamental to building an online presence for any design project. Students will learn how to identify the current technologies underlying social media interfaces, mobile web applications that rely on browsers and apps. You will also gain an understanding of the fundamentals of markup languages (HTML, XML) as well as formatting (CSS) and client-side programming (JS). These basic skills will be contextualized within a basic overview of interface design. With the knowledge built in this course students will begin to understand how to create responsive web-based projects that adapt to different devices and develop strategies for creating screen-based interfaces.
 
 #### [View Full Course Syllabus](docs/syllabus.md)
+
+### About This Repository
+
+<details>
+<summary>Built With</summary>
+
+- Jekyll
+- gr8
+</details>
+
+<details>
+<summary>Local Development</summary>
+
+This repository contains the contents and files for [wwworkshop.org](https://wwworkshop.org). The site is generated with [Jekyll](https://jekyllrb.com) and hosted on [GitHub Pages](https://pages.github.com). To run this site locally, execute the following in command-line:
+1. `$ gem install jekyll bundler`
+2. `$ bundle install`
+3. `$ bundle exec jekyll serve --livereload`
+4. Navigate to `http://localhost:4000/`
+</details>
+
+<details>
+<summary>Licence & Attribution</summary>
+
+- [GNU General Public License v3.0](./LICENSE.md)
+- Unless otherwise indicated, Course content is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
+</details>
 
 ---
 
