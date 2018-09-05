@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  jekyll_build:
+    docker:
+      - image: circleci/ruby:2.5.1
+    environment:
+      - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: sudo apt-get install nodejs && gem install bundler && bundle install
+      - run:
+          name: Jekyll Build
+          command: bundle exec jekyll build
+      - run: 
+          name: HTMLProofer Test
+          command: bundle exec htmlproofer ./_site --check-html
+  js_build:
+    docker:
+      - image: node:8.11.1
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: npm Build
+          command: npm run build
+
+workflows:
+  version: 2
+  build-and-js:
+    jobs:
+      - jekyll_build
+      - js_build
