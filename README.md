@@ -2,9 +2,9 @@
 #### GDES-3091 Interactive Media: Web (2018 Fall)
 
 - **Time:** Fridays, 8:30am – 11:30am
-- **Location:** [100 McCaul Street/Sharp Centre](https://goo.gl/maps/FvQJx42HD262), Room 558
+- **Location:**  Room 558, [100 McCaul Street/Sharp Centre](https://goo.gl/maps/FvQJx42HD262)
 - **Instructor:** [Garry Ing](https://garrying.com), ging@faculty.ocadu.ca
-- **Office Hours:** TBD
+- **Office Hours:** Fridays, 11:30am – 12:30pm, Room 620
 
 Learn how to weave a range of online technologies into engaging interactive experiences. In this course, students will learn the basics of web technologies that are fundamental to building an online presence for any design project. Students will learn how to identify the current technologies underlying social media interfaces, mobile web applications that rely on browsers and apps. You will also gain an understanding of the fundamentals of markup languages (HTML, XML) as well as formatting (CSS) and client-side programming (JS). These basic skills will be contextualized within a basic overview of interface design. With the knowledge built in this course students will begin to understand how to create responsive web-based projects that adapt to different devices and develop strategies for creating screen-based interfaces.
 
