@@ -10,4 +10,3 @@ layout: default
     </div>
   </header>
 </article>
->>>>>>> readme-first-pass
