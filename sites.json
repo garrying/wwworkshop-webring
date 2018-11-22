@@ -1,0 +1,13 @@
+---
+---
+{
+  "size": {{ site.data.sites | size | jsonify }},
+  "sites": [
+    {%- for member in site.data.sites -%}
+      {
+        "name": {{ member.name | jsonify }},
+        "siteURL": {{ member.siteURL | jsonify }}
+      }{% if forloop.last == false %},{% endif %}
+    {%- endfor -%}
+  ]
+}
