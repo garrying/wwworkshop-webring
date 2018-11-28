@@ -15,10 +15,10 @@
   }
 
   function typeInput() {
-    if (widget.type === 'random') {
-      var hash = 'random';
-    } else if (widget.type === 'next') {
+    if (widget.type === 'next') {
       var hash = `${window.location.host}${window.location.pathname}`;
+    } else {
+      var hash = 'random';
     }
     return hash;
   }
