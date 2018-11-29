@@ -1,5 +1,5 @@
 (function() {
-  var baseUrl = 'http://localhost:4000';
+  var baseUrl = 'https://wwworkshop.org';
   var myElement = document.createElement("div");
   myElement.id = 'wwworkshop-widget';
 
