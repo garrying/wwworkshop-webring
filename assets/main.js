@@ -1,26 +1,36 @@
 'use strict'
 
-let portal;
+let portal
 
 function Portal (sites) {
   this.el = document.createElement('div')
-  this.el.classList.add('f1', 'ph5-l');
+  this.el.classList.add('f1')
   this.sites = sites
+
+  function aboutDisable () {
+    if (window.location.pathname === '/about/') {
+      return 'dn'
+    } else {
+      return 'dib'
+    }
+  }
+
+  console.log(aboutDisable());
 
   // Templates
 
   function _buttons () {
-    return `<p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#'>Information</a> <a class='link black' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    return `<p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 black ${aboutDisable()}' href='/about'>About</a> <a class='link black' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   function _directory (sites) {
     return `
-    <ul class="list pl0 f1 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li><a class='link black' href='${val.siteURL}'>${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
+    <ul class="list pl0 f1 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li><a class='link black' href='${val.siteURL}'>${val.name} ❍ ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
   }
 
   function _redirect (target) {
     return `<p>Redirecting to <b>${target.siteURL}</b></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
-    <p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#' onClick="portal.reload('')">Directory</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#'>Information</a> <a class='link black' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    <p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#' onClick="portal.reload('')">Directory</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 black ${aboutDisable()}' href='/about'>About</a> <a class='link black' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   //
@@ -43,7 +53,7 @@ function Portal (sites) {
 
   this.locate = function () {
     const hash = window.location.hash.replace('#', '').trim()
-    if (hash == 'random') {
+    if (hash === 'random') {
       return Math.floor(Math.random() * this.sites.length)
     }
 
@@ -56,12 +66,12 @@ function Portal (sites) {
   }
 
   this.next = function (loc = this.locate()) {
-    return loc == this.sites.length - 1 ? this.sites[0] : this.sites[loc + 1]
+    return loc === this.sites.length - 1 ? this.sites[0] : this.sites[loc + 1]
   }
 }
 
 async function fetchAsync () {
-  let response = await fetch('sites.json')
+  let response = await fetch('/sites.json')
   let data = await response.json()
   return data
 }
@@ -72,6 +82,6 @@ fetchAsync()
     portal.install(document.body)
     portal.start()
   })
-  .catch(function(reason){
+  .catch(function (reason) {
     console.log(reason.message)
   })
