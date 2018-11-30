@@ -1,3 +1,14 @@
 ---
 ---
 @import "tachyons";
+@import "fonts";
+
+.bg-rgb-blue {
+  background-color: #00f;
+}
+
+.work-sans {
+  font-feature-settings:"kern" 1;
+  font-kerning: normal;
+  font-family: 'Work Sans', sans-serif;
+}

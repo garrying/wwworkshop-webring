@@ -6,6 +6,7 @@ function Portal (sites) {
   this.el = document.createElement('div')
   this.el.classList.add('f1')
   this.sites = sites
+  const separators = ['▤', '▥', '▦', '▧', '▨', '▩']
 
   function aboutDisable () {
     if (window.location.pathname === '/about/') {
@@ -15,22 +16,24 @@ function Portal (sites) {
     }
   }
 
-  console.log(aboutDisable());
-
   // Templates
 
+  function _separator () {
+    return separators[Math.floor(Math.random()*separators.length)];
+  }
+
   function _buttons () {
-    return `<p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 black ${aboutDisable()}' href='/about'>About</a> <a class='link black' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    return `<p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   function _directory (sites) {
     return `
-    <ul class="list pl0 f1 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li><a class='link black' href='${val.siteURL}'>${val.name} ▓ ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
+    <ul class="list pl0 f1 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li><a class='link white' href='${val.siteURL}'>${val.name} ${_separator()} ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
   }
 
   function _redirect (target) {
     return `<p>Redirecting to <b>${target.siteURL}</b></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
-    <p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#' onClick="portal.reload('')">Directory</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib black' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 black ${aboutDisable()}' href='/about'>About</a> <a class='link black' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    <p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   //
