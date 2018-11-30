@@ -1,16 +1,17 @@
 (function () {
   var baseUrl = 'https://wwworkshop.org'
-  var myElement = document.createElement("div")
+  var myElement = document.createElement('div')
   myElement.id = 'wwworkshop-widget'
 
   function getSyncScriptParams () {
     var scripts = document.getElementsByTagName('script')
     var scriptEles = Array.prototype.map.call(scripts, element => ({
       src: element.src,
-      color: element.dataset.color,
+      color: (element.dataset.color || '#000'),
       type: element.dataset.linkType
     }))
     var widgetEle = scriptEles.filter(script => script.src.includes('wwwidget.js'))[0]
+
     return widgetEle
   }
 
