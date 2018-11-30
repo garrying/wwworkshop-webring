@@ -16,21 +16,24 @@ jobs:
       - run: 
           name: HTMLProofer Test
           command: bundle exec htmlproofer ./_site --check-html
-  # js_build:
-  #   docker:
-  #     - image: node:8.11.1
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         name: Install Dependencies
-  #         command: npm install
-  #     - run:
-  #         name: npm Build
-  #         command: npm run build
+  js_build:
+    docker:
+      - image: node:8.11.1
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: npm Lint
+          command: npm run lint
+      - run:
+          name: npm Build
+          command: npm run build
 
 workflows:
   version: 2
   build-and-js:
     jobs:
       - jekyll_build
-      # - js_build
+      - js_build

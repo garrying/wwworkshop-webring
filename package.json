@@ -1,0 +1,30 @@
+{
+  "name": "wwworkshop-2018",
+  "version": "1.0.0",
+  "description": "- **Time:** Fridays, 8:30am – 11:30am - **Location:**  Room 558, [100 McCaul Street/Sharp Centre](https://goo.gl/maps/FvQJx42HD262) - **Instructor:** [Garry Ing](https://garrying.com), ging@faculty.ocadu.ca - **Office Hours:** Fridays, 11:30am – 12:30pm, Room 620",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint assets/wwwidget.js",
+    "build": "minify assets/wwwidget.js -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrying/wwworkshop-2018.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garrying/wwworkshop-2018/issues"
+  },
+  "homepage": "https://github.com/garrying/wwworkshop-2018#readme",
+  "devDependencies": {
+    "babel-minify": "^0.5.0",
+    "babel-preset-minify": "^0.5.0",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
