@@ -28,7 +28,7 @@ function Portal (sites) {
 
   function _directory (sites) {
     return `
-    <ul class="list pl0 f1 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li><a class='link white' href='${val.siteURL}'>${val.name} ${_separator()} ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
+    <ul class="list pl0 f2-ns f3 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb2"><a class='dim link white' href='${val.siteURL}'>${val.name} ${_separator()} ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
   }
 
   function _redirect (target) {
