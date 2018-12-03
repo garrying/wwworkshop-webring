@@ -3,6 +3,10 @@
 @import "tachyons";
 @import "fonts";
 
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
 .bg-rgb-blue {
   background-color: #00f;
 }
