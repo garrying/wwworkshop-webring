@@ -4,7 +4,6 @@ let portal
 
 function Portal (sites) {
   this.el = document.createElement('div')
-  this.el.classList.add('f1')
   this.sites = sites
   const separators = ['▤', '▥', '▦', '▧', '▨', '▩']
 
@@ -23,16 +22,16 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return `<p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    return `<p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb5 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb5 mr3 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   function _directory (sites) {
     return `
-    <ul class="list pl0 f2-ns f3 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb2"><a class='dim link white' href='${val.siteURL}'>${val.name} ${_separator()} ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
+    <ul class="grid list pl0 f2-ns f3 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb3"><a class='dim link white' href='${val.siteURL}'>${val.name} ${_separator()} <br>↳ ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
   }
 
   function _redirect (target) {
-    return `<p>Redirecting to <b>${target.siteURL}</b></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
+    return `<p class="f2">Redirecting to <b>${target.siteURL}</b></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
     <p class='buttons'><a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
@@ -82,7 +81,7 @@ async function fetchAsync () {
 fetchAsync()
   .then(function (data) {
     portal = new Portal(data.sites)
-    portal.install(document.body)
+    portal.install(document.getElementById('webring-container'))
     portal.start()
   })
   .catch(function (reason) {

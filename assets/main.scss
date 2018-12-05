@@ -7,6 +7,16 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+.grid {
+  max-width: 1290px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+}
+
 .bg-rgb-blue {
   background-color: #00f;
 }
