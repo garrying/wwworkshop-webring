@@ -5,7 +5,7 @@ permalink: /about/
 class: dtc v-mid cover pl0 f1 lh-title
 ---
 
-<a class='f2 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='/' title="return home">Home</a>
+<a class='f3 link dim br4 bw2 ba ph5 pv3 mb2 dib white' href='/' title="return home">Home</a>
 
 A webring (or web ring) is a collection of websites linked together in a circular structure, and usually organized around a specific theme, often educational or social.<sup>[[1]](#ref1){:.white}</sup>
 {:.f2-ns.f3}
