@@ -6,6 +6,7 @@
     {%- for member in site.data.sites -%}
       {
         "name": {{ member.name | jsonify }},
+        "image": {{ member.image | prepend: '/images/' | jsonify }},
         "siteURL": {{ member.siteURL | jsonify }}
       }{% if forloop.last == false %},{% endif %}
     {%- endfor -%}

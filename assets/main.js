@@ -27,7 +27,7 @@ function Portal (sites) {
 
   function _directory (sites) {
     return `
-    <ul class="grid list pl0 f3-ns f3 mb5 mt5 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb3"><a class='dim link white' href='${val.siteURL}'>${val.name} ${_separator()} <br>↳ ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
+    <ul class="grid list pl0 f3-ns f3 mb5 mt5 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb3"><a class='dib dim link white' data-image='${val.image}' href='${val.siteURL}'>${val.name} ${_separator()} <br>↳ ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
   }
 
   function _redirect (target) {
