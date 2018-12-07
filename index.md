@@ -1,4 +1,5 @@
 ---
+title: Collection of Collections
 layout: default
 ---
 

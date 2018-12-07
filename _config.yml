@@ -16,7 +16,8 @@
 title: WWWorkshop
 email: hello@garrying.com
 description: >- # this means to ignore newlines until "baseurl:"
-  EVERYTHING IS DEEPLY INTERTWINGLED
+  WWWorkshop is a webring created at OCAD University
+  in 2018 as part of the course GDES-3091 Interactive Media: Web
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: garrying
@@ -25,7 +26,6 @@ github_username:  garrying
 # Build settings
 markdown: kramdown
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
 sass:
