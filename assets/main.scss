@@ -7,6 +7,9 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+::-moz-selection { color: #00f; background: #fff; }
+::selection { color: #00f; background: #fff; }
+
 .grid {
   max-width: 840px;
   display: grid;
@@ -19,6 +22,11 @@ html {
 
 .bg-rgb-blue {
   background-color: #00f;
+}
+
+#bg-graphic svg {
+  height: 100vh;
+  width: 100vw;
 }
 
 .work-sans {

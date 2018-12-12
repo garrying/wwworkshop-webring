@@ -22,7 +22,7 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return `<p class='buttons'><a class='f3 link dim bw2 ba ph5 pv3 mb5 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link dim bw2 ba ph5 pv3 mb5 mr3 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    return `<p class='buttons'><a class='f3 link br4 dim bw2 ba ph5 pv3 mb5 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb5 mr3 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   function _directory (sites) {
@@ -32,7 +32,7 @@ function Portal (sites) {
 
   function _redirect (target) {
     return `<p class="f1">Redirecting to ${target.title ? target.title : ''}<br>↳ <strong>${target.siteURL}</strong></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
-    <p class='buttons'><a class='f3 link dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f3 link dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f3 link dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link dim bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a></p>`
+    <p class='buttons'><a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a></p>`
   }
 
   //
@@ -87,3 +87,80 @@ fetchAsync()
   .catch(function (reason) {
     console.log(reason.message)
   })
+
+// two.js effect
+
+// ES6
+// ☕️ = callback
+Document.prototype.ready = calback => {
+  if (calback && typeof calback === 'function') {
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.readyState === 'interactive' || document.readyState === 'complete') {
+        return calback()
+      }
+    })
+  }
+}
+
+document.ready(() => {
+  var type = 'svg'
+  var two = new Two({
+    type: Two.Types[type],
+    fullscreen: true,
+    autostart: true
+  }).appendTo(document.getElementById('bg-graphic'))
+
+  Two.Resoultion = 64
+
+  var delta = new Two.Vector()
+  var mouse = new Two.Vector()
+  var drag = 0.15
+  var radius = 14
+
+  var ball = two.makeCircle(two.width / 2, two.height / 2, radius)
+  ball.noStroke()
+  ball.fill = '#fff'
+
+  _.each(ball.vertices, function(v) {
+    v.origin = new Two.Vector().copy(v)
+  })
+
+  window.addEventListener('mousemove', function (e) {
+    mouse.x = e.clientX
+    mouse.y = e.clientY
+  })
+
+  window.addEventListener('touchstart', function () {
+    e.preventDefault()
+    return false
+  })
+
+  window.addEventListener('touchmove', function (e) {
+    e.preventDefault()
+    var touch = e.originalEvent.changedTouches[0]
+    mouse.x = touch.pageX
+    mouse.y = touch.pageY
+    return false
+  })
+
+  two.bind('update', function () {
+    delta.copy(mouse).subSelf(ball.translation)
+
+    _.each(ball.vertices, function (v, i) {
+      var dist = v.origin.distanceTo(delta)
+      var pct = dist / radius
+
+      var x = delta.x * pct
+      var y = delta.y * pct
+
+      var destx = v.origin.x - x
+      var desty = v.origin.y - y
+
+      v.x += (destx - v.x) * drag
+      v.y += (desty - v.y) * drag
+
+    })
+
+    ball.translation.addSelf(delta)
+  })
+})
