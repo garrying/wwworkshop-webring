@@ -22,7 +22,7 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return `<p class='buttons'><a class='f3 link dim br4 bw2 ba ph5 pv3 mb5 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link dim br4 bw2 ba ph5 pv3 mb5 mr3 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    return `<p class='buttons'><a class='f3 link dim bw2 ba ph5 pv3 mb5 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link dim bw2 ba ph5 pv3 mb5 mr3 white ${aboutDisable()}' href='/about'>About</a> <a class='link white' id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   function _directory (sites) {
@@ -32,7 +32,7 @@ function Portal (sites) {
 
   function _redirect (target) {
     return `<p class="f1">Redirecting to ${target.title ? target.title : ''}<br>↳ <strong>${target.siteURL}</strong></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
-    <p class='buttons'><a class='f3 link dim br4 bw2 ba ph5 pv3 mb3 mr3 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f3 link dim br4 bw2 ba ph5 pv3 mb3 mr3 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f3 link dim br4 bw2 ba ph5 pv3 mb3 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link dim br4 bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a></p>`
+    <p class='buttons'><a class='f3 link dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f3 link dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f3 link dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link dim bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a></p>`
   }
 
   //
