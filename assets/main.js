@@ -18,7 +18,7 @@ function Portal (sites) {
   // Templates
 
   function _separator () {
-    return separators[Math.floor(Math.random()*separators.length)];
+    return separators[Math.floor(Math.random() * separators.length)]
   }
 
   function _buttons () {
@@ -27,11 +27,11 @@ function Portal (sites) {
 
   function _directory (sites) {
     return `
-    <ul class="grid list pl0 f3-ns f3 mb5 mt5 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb3"><a class='dib dim link white' data-image='${val.image}' href='${val.siteURL}'>${val.name} ${_separator()} <br>↳ ${val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
+    <ul class="grid list pl0 f3-ns f3 mb5 mt5 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb3"><a class='dib dim link white' data-image='${val.image}' href='${val.siteURL}'>${val.name} ${_separator()} <br>↳ ${val.title ? val.title : val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
   }
 
   function _redirect (target) {
-    return `<p class="f1">Redirecting to <br>↳ <strong>${target.siteURL}</strong></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
+    return `<p class="f1">Redirecting to ${target.title ? target.title : ''}<br>↳ <strong>${target.siteURL}</strong></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
     <p class='buttons'><a class='f3 link dim br4 bw2 ba ph5 pv3 mb3 mr3 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f3 link dim br4 bw2 ba ph5 pv3 mb3 mr3 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f3 link dim br4 bw2 ba ph5 pv3 mb3 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a> <a class='f3 link dim br4 bw2 ba ph5 pv3 mb2 white ${aboutDisable()}' href='/about'>About</a></p>`
   }
 
