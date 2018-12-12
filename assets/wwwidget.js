@@ -24,13 +24,13 @@
   }
 
   var widget = getSyncScriptParams()
-  var svgArt = `<svg xmlns="http://www.w3.org/2000/svg" fill="${widget.color}" viewBox="0 0 26 26"><path d="M2 12V2h10v4h2V0H0v14h6v-2z"/><path opacity=".5" d="M6 6v14h6v-2H8V8h10v4h2V6z"/><path d="M12 12v14h14V12H12zm12 12H14V14h10v10z" opacity=".1"/></svg>`
+  var svgArt = `<svg xmlns="http://www.w3.org/2000/svg" fill="${widget.color}" viewBox="0 0 19 30"><style>path{transition:opacity 300ms ease-in-out;}g{pointer-events: bounding-box;}g:hover path{opacity:1;}</style><g><path opacity=".1" d="M3.1 17.1l1.5 1.4-1.5 1.4 7.1 7.1 5.7-5.6-1.5-1.5 1.5-1.4 2.8 2.9-8.5 8.4-9.9-9.9z"/><path d="M.3 8.6l9.9 9.9 8.5-8.5L8.8.2.3 8.6zm2.8 0L8.8 3l7.1 7.1-5.7 5.7-7.1-7.2z"/><path opacity=".5" d="M3.1 11.5l1.5 1.4-1.5 1.4 7.1 7.1 5.7-5.7-1.5-1.4 1.5-1.4 2.8 2.8-8.5 8.5-9.9-9.9z"/></g></svg>`
 
   var ringLink = `
     <a title="WWWorkshop.org" href="${baseUrl}#${typeInput()}" style="position:absolute;width:100%;height:100%">${svgArt}</a>
   `
 
-  myElement.style.cssText = `position:fixed; z-index:2147483647; width:26px; height:26px; bottom:20px; right:20px;`
+  myElement.style.cssText = `position:fixed; z-index:2147483647; width:19px; height:30px; bottom:20px; right:20px;`
   myElement.innerHTML = ringLink
 
   document.body.appendChild(myElement)
