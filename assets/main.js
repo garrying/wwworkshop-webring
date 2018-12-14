@@ -130,14 +130,14 @@ document.ready(() => {
     mouse.y = e.clientY
   })
 
-  window.addEventListener('touchstart', function () {
+  window.addEventListener('touchstart', function (e) {
     e.preventDefault()
     return false
   })
 
   window.addEventListener('touchmove', function (e) {
     e.preventDefault()
-    var touch = e.originalEvent.changedTouches[0]
+    var touch = e.changedTouches[0]
     mouse.x = touch.pageX
     mouse.y = touch.pageY
     return false
