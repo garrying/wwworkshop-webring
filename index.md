@@ -1,7 +1,10 @@
 ---
 title: Collection of Collections
 layout: default
+class: f1
 ---
+
+<a class="f3 link dim bw2 ba br4 ph5 pv3 mb2 dib white" href='/about'>About</a> <a class='f3 link dim bw2 ba br4 ph5 pv3 mb2 dib white' href="https://github.com/garrying/wwworkshop" target="_blank" title="visit course syllabus on GitHub">Course Syllabus</a> 
 
 <article>
   <header class="vh-50 dt w-100">
