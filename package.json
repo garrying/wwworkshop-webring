@@ -1,22 +1,22 @@
 {
-  "name": "wwworkshop-2018",
+  "name": "wwworkshop-webring",
   "version": "1.0.0",
-  "description": "- **Time:** Fridays, 8:30am – 11:30am - **Location:**  Room 558, [100 McCaul Street/Sharp Centre](https://goo.gl/maps/FvQJx42HD262) - **Instructor:** [Garry Ing](https://garrying.com), ging@faculty.ocadu.ca - **Office Hours:** Fridays, 11:30am – 12:30pm, Room 620",
-  "main": "index.js",
+  "description": "A webring",
+  "main": "assets/wwwidget.js",
   "scripts": {
     "lint": "eslint assets/wwwidget.js || exit 0",
     "build": "minify assets/wwwidget.js -d ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garrying/wwworkshop-2018.git"
+    "url": "git+https://github.com/garrying/wwworkshop-webring.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Garry Ing <hello@garrying.com> (https://garrying.com/)",
+  "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/garrying/wwworkshop-2018/issues"
+    "url": "https://github.com/garrying/wwworkshop-webring/issues"
   },
-  "homepage": "https://github.com/garrying/wwworkshop-2018#readme",
+  "homepage": "https://github.com/garrying/wwworkshop-webring#readme",
   "devDependencies": {
     "babel-minify": "^0.5.0",
     "babel-preset-minify": "^0.5.0",
