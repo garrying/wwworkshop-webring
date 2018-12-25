@@ -1,7 +1,7 @@
 # WWWorkshop Webring
 [![CircleCI](https://circleci.com/gh/garrying/wwworkshop-webring.svg?style=svg&circle-token=925de8bb734e79ca2ced33c897790092193f1f7d)](https://circleci.com/gh/garrying/wwworkshop-webring)
 
-Source code for a [webring](https://en.wikipedia.org/wiki/Webring) called _WWWorkshop_. Created as part of an undergraduate studio course at OCAD University.
+Source code for a [webring](https://en.wikipedia.org/wiki/Webring) called _WWWorkshop_. Created as part of an undergraduate studio course at OCAD University and is based on [webring.xxiivv.com](https://github.com/XXIIVV/webring) by [neauoire](https://github.com/neauoire).
 
 ### Joining the Webring
 
@@ -22,7 +22,7 @@ The tag contains two `data` attributes:
 
 ### Adding a Site
 
-Adding sites to the webring is done by adding a new entry in [`./_data/sites.yml`](./_data/sites.yml). Example of an entry:
+Adding sites to the webring is done by adding a new entry in [`./_data/sites.yml`](./_data/sites.yml). [Submit an edit](./edit/master/_data/sites.yml) to this repository to add yourself to the webring. Example of an entry:
 
 ```yaml
 - name: {{ site.name }}
