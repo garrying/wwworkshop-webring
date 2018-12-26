@@ -1,4 +1,5 @@
 # WWWorkshop Webring
+
 [![CircleCI](https://circleci.com/gh/garrying/wwworkshop-webring.svg?style=svg&circle-token=925de8bb734e79ca2ced33c897790092193f1f7d)](https://circleci.com/gh/garrying/wwworkshop-webring)
 
 Source code for a [webring](https://en.wikipedia.org/wiki/Webring) called [**WWWorkshop**](https://wwworkshop.org) Created as part of an undergraduate studio course at OCAD University—[view course materials and syllabus](https://github.com/garrying/wwworkshop). Source code and design is based on [webring.xxiivv.com](https://github.com/XXIIVV/webring) by [neauoire](https://github.com/neauoire).
@@ -15,10 +16,10 @@ Add the following HTML snippet to the bottom of your page, before the closing `<
 
 The tag contains two `data` attributes:
 
-- `data-color`: (Hex color) Defines the color of the monograph. Default is black, `#000000`.
-- `data-link-type`: Defines the navigation style through the webring
+* `data-color`: (Hex color) Defines the color of the monograph. Default is black, `#000000`
+* `data-link-type`: Defines the navigation style through the webring
   - `random` Default
-  -  `next` Navigate to the adjacent URL in the webring sequence
+  - `next` Navigate to the adjacent URL in the webring sequence
 
 ### Adding a Site
 
@@ -35,8 +36,8 @@ Adding sites to the webring is done by adding a new entry in [`./_data/sites.yml
 1. Clone repository: `git clone https://github.com/garrying/wwworkshop-webring && cd wwworkshop-webring`
 2. Install Bundler: `gem install bundler`
 3. Install dependencies: `bundle install`
-2. Run locally: `bundle exec jekyll serve --livereload`
-3. Open a browser to: `http://localhost:4000`
+4. Run locally: `bundle exec jekyll serve --livereload`
+5. Open a browser to: `http://localhost:4000`
 
 #### wwwwidget.js Development
 
@@ -46,7 +47,7 @@ With [npm](https://www.npmjs.com/) installed:
 2. Lint `./assets/wwwidget.js` with [ESLint](https://eslint.org/): `npm run lint`
 3. Build `./assets/wwwidget.js` with [babel-minify](https://github.com/babel/minify): `npm run build`
 
-### Licence & Attribution
+### License & Attribution
 
 Webring code is based on [webring.xxiivv.com](https://github.com/XXIIVV/webring) by [neauoire](https://github.com/neauoire).
 
