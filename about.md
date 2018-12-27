@@ -2,7 +2,7 @@
 layout: default
 title: About
 permalink: /about/
-class: dtc v-mid cover pl0 f1 lh-title
+class: f1
 ---
 
 <a class='f3 link dim bw2 ba br4 ph5 pv3 mb2 dib white' href='/' title="return home">Home</a> <a class='f3 link dim bw2 ba br4 ph5 pv3 mb2 dib white' href="https://github.com/garrying/wwworkshop" target="_blank" title="visit course syllabus on GitHub">Course Syllabus</a>
