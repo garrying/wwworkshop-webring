@@ -30,7 +30,7 @@
     <a title="WWWorkshop.org" href="${baseUrl}#${typeInput()}" style="position:absolute;width:100%;height:100%">${svgArt}</a>
   `
 
-  myElement.style.cssText = `position:fixed; z-index:2147483647; width:19px; height:30px; bottom:20px; right:20px;`
+  myElement.style.cssText = 'position:fixed; z-index:2147483647; width:19px; height:30px; bottom:20px; right:20px;'
   myElement.innerHTML = ringLink
 
   document.body.appendChild(myElement)
