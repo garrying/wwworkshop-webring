@@ -4,7 +4,7 @@
   "description": "A webring",
   "main": "assets/wwwidget.js",
   "scripts": {
-    "lint": "eslint assets/wwwidget.js || exit 0",
+    "lint": "eslint assets/wwwidget.js assets/main.js || exit 0",
     "build": "minify assets/wwwidget.js -d ."
   },
   "repository": {

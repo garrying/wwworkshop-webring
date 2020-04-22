@@ -1,3 +1,5 @@
+/* global Two _ */
+
 'use strict'
 
 let portal
@@ -7,14 +9,6 @@ function Portal (sites) {
   this.sites = sites
   const separators = ['▤', '▥', '▦', '▧', '▨', '▩']
 
-  function aboutDisable () {
-    if (window.location.pathname === '/about/') {
-      return 'dn'
-    } else {
-      return 'dib'
-    }
-  }
-
   // Templates
 
   function _separator () {
@@ -22,7 +16,7 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return `<p class='buttons'><a class='f3 link br4 dim bw2 ba ph5 pv3 mb5 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a>`
+    return '<p class="buttons"><a class="f3 link br4 dim bw2 ba ph5 pv3 mb5 mr3 dib white" href="#random" onClick="portal.reload(\'random\')">Random</a>'
   }
 
   function _directory (sites) {
@@ -73,8 +67,8 @@ function Portal (sites) {
 }
 
 async function fetchAsync () {
-  let response = await fetch('/sites.json')
-  let data = await response.json()
+  const response = await window.fetch('/sites.json')
+  const data = await response.json()
   return data
 }
 
@@ -90,19 +84,7 @@ fetchAsync()
 
 // two.js effect
 
-// ES6
-// ☕️ = callback
-Document.prototype.ready = calback => {
-  if (calback && typeof calback === 'function') {
-    document.addEventListener('DOMContentLoaded', () => {
-      if (document.readyState === 'interactive' || document.readyState === 'complete') {
-        return calback()
-      }
-    })
-  }
-}
-
-document.ready(() => {
+document.addEventListener('DOMContentLoaded', () => {
   var type = 'svg'
   var two = new Two({
     type: Two.Types[type],
@@ -121,7 +103,7 @@ document.ready(() => {
   ball.noStroke()
   ball.fill = '#fff'
 
-  _.each(ball.vertices, function(v) {
+  _.each(ball.vertices, function (v) {
     v.origin = new Two.Vector().copy(v)
   })
 
@@ -158,7 +140,6 @@ document.ready(() => {
 
       v.x += (destx - v.x) * drag
       v.y += (desty - v.y) * drag
-
     })
 
     ball.translation.addSelf(delta)
