@@ -2,7 +2,7 @@ version: 2
 jobs:
   jekyll_build:
     docker:
-      - image: circleci/ruby:2.5.1
+      - image: circleci/ruby:2.6.6
     environment:
       - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
     steps:
@@ -18,7 +18,7 @@ jobs:
           command: bundle exec htmlproofer ./_site --check-html
   js_build:
     docker:
-      - image: node:8.11.1
+      - image: node:12.16.2
     steps:
       - checkout
       - run:
