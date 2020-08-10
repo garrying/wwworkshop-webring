@@ -1,9 +1,10 @@
 ---
 ---
+{% assign membersByName = site.data.sites | sort: "name" %}
 {
   "size": {{ site.data.sites | size | jsonify }},
   "sites": [
-    {%- for member in site.data.sites -%}
+    {%- for member in membersByName -%}
       {
         "name": {{ member.name | jsonify }},
         "title": {{ member.title | jsonify }},
