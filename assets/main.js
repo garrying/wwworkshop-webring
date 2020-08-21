@@ -16,17 +16,17 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return '<p class="buttons"><a class="f3 link br4 dim bw2 ba ph5 pv3 mb5 mr3 dib white" href="#random" onClick="portal.reload(\'random\')">Random</a>'
+    return '<p class="buttons"><a class="f3 link br4 dim bw1 ba ph4 pv3 mb5 mr3 dib white" href="#random" onClick="portal.reload(\'random\')">Random</a>'
   }
 
   function _directory (sites) {
     return `
-    <ul class="grid list pl0 f3-ns f3 mb5 mt5 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb3"><a class='dib dim link white' data-image='${val.image}' href='${val.siteURL}' target="_blank">${val.name} ${_separator()} <br>↳ ${val.title ? val.title : val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
+    <ul class="grid list pl0 f4-ns f4 mb5 mt5 lh-title">${sites.reduce((acc, val, id) => { return `${acc}<li class="mb3"><a class='dib dim link white' data-image='${val.image}' href='${val.siteURL}' target="_blank">${val.name} ${_separator()} <br>⤷ ${val.title ? val.title : val.siteURL.split('//')[1]}</a></li>` }, '')}</ul>\n${_buttons()}`
   }
 
   function _redirect (target) {
-    return `<p class="f1">Redirecting to ${target.title ? target.title : ''}<br>↳ <strong>${target.siteURL}</strong></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
-    <p class='buttons'><a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a></p>`
+    return `<p class="f1">Redirecting to ${target.title ? target.title : ''}<br>⤷ <strong>${target.siteURL}</strong></p><meta http-equiv="refresh" content="3; url=${target.siteURL}">
+    <p class='buttons'><a class='f3 link br4 dim bw2 ba ph4 pv3 mb3 mr3 dib white' href='#' onClick="portal.reload('')">Directory</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#${target.siteURL}' onClick="portal.reload('random')">Skip</a> <a class='f3 link br4 dim bw2 ba ph5 pv3 mb3 mr3 dib white' href='#random' onClick="portal.reload('random')">Random</a></p>`
   }
 
   //
@@ -88,11 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
   var type = 'svg'
   var two = new Two({
     type: Two.Types[type],
-    fullscreen: true,
-    autostart: true
+    fullscreen: true
   }).appendTo(document.getElementById('bg-graphic'))
 
-  Two.Resoultion = 64
+  Two.Resolution = 64
 
   var delta = new Two.Vector()
   var mouse = new Two.Vector()
@@ -101,31 +100,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var ball = two.makeCircle(two.width / 2, two.height / 2, radius)
   ball.noStroke()
-  ball.fill = '#fff'
 
   _.each(ball.vertices, function (v) {
     v.origin = new Two.Vector().copy(v)
   })
 
-  window.addEventListener('mousemove', function (e) {
+  document.addEventListener('mouseenter', () => {
+    two.play()
+  })
+
+  window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX
     mouse.y = e.clientY
   })
 
-  window.addEventListener('touchstart', function (e) {
-    e.preventDefault()
-    return false
-  })
-
-  window.addEventListener('touchmove', function (e) {
-    e.preventDefault()
-    var touch = e.changedTouches[0]
-    mouse.x = touch.pageX
-    mouse.y = touch.pageY
-    return false
-  })
-
-  two.bind('update', function () {
+  two.bind('update', () => {
     delta.copy(mouse).subSelf(ball.translation)
 
     _.each(ball.vertices, function (v, i) {

@@ -5,7 +5,7 @@ permalink: /about/
 class: f1
 ---
 
-<a class='f3 link dim bw2 ba br4 ph5 pv3 mb2 dib white' href='/' title="return home">Home</a> <a class='f3 link dim bw2 ba br4 ph5 pv3 mb2 dib white' href="https://github.com/garrying/wwworkshop" target="_blank" title="visit course syllabus on GitHub">Course Syllabus</a>
+<a class='f4 link dim bw1 ba br4 ph4 pv3 mb2 dib white' href='/' title="return home">Home</a> <a class='f4 link dim bw1 ba br4 ph4 pv3 mb2 dib white' href="https://github.com/garrying/wwworkshop" target="_blank" title="visit course syllabus on GitHub">Course Syllabus</a>
 
 A webring (or web ring) is a collection of websites linked together in a circular structure, and usually organized around a specific theme, often educational or social.<sup>[[1]](#ref1){:.white}</sup>
 {:.f2-ns.f3}
