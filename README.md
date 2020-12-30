@@ -23,7 +23,7 @@ The tag contains two `data` attributes:
 
 ### Adding a Site
 
-Adding sites to the webring is done by adding a new entry in [`./_data/sites.yml`](./_data/sites.yml). Add yourself to the webring by [submitting an edit](https://github.com/garrying/wwworkshop-webring/edit/master/_data/sites.yml) to this repository. Example of an entry:
+Adding sites to the webring is done by adding a new entry in [`./_data/sites.yml`](./_data/sites.yml). Add yourself to the webring by [submitting an edit](https://github.com/garrying/wwworkshop-webring/edit/main/_data/sites.yml) to this repository. Example of an entry:
 
 ```yaml
 - name: {{ site.name }}
