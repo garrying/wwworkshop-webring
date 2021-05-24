@@ -17,6 +17,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
+    - name: Build
+      run: bundle exec jekyll build
     - name: Run tests
       run: bundle exec htmlproofer ./_site --check-html
 
