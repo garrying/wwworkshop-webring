@@ -1,6 +1,6 @@
 # WWWorkshop Webring
 
-[![CircleCI](https://circleci.com/gh/garrying/wwworkshop-webring.svg?style=svg&circle-token=925de8bb734e79ca2ced33c897790092193f1f7d)](https://circleci.com/gh/garrying/wwworkshop-webring)
+[![HTMLProofer/NPM Lint Build](https://github.com/garrying/wwworkshop-webring/actions/workflows/main.yml/badge.svg)](https://github.com/garrying/wwworkshop-webring/actions/workflows/main.yml)
 
 Source code for a [webring](https://en.wikipedia.org/wiki/Webring) called [**WWWorkshop**](https://wwworkshop.org) Created as part of an undergraduate studio course at OCAD University—[view course materials and syllabus](https://github.com/garrying/wwworkshop). Source code and design is based on [webring.xxiivv.com](https://github.com/XXIIVV/webring) by [neauoire](https://github.com/neauoire).
 
