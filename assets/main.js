@@ -85,20 +85,20 @@ fetchAsync()
 // two.js effect
 
 document.addEventListener('DOMContentLoaded', () => {
-  var type = 'svg'
-  var two = new Two({
+  const type = 'svg'
+  const two = new Two({
     type: Two.Types[type],
     fullscreen: true
   }).appendTo(document.getElementById('bg-graphic'))
 
   Two.Resolution = 64
 
-  var delta = new Two.Vector()
-  var mouse = new Two.Vector()
-  var drag = 0.15
-  var radius = 14
+  const delta = new Two.Vector()
+  const mouse = new Two.Vector()
+  const drag = 0.15
+  const radius = 14
 
-  var ball = two.makeCircle(two.width / 2, two.height / 2, radius)
+  const ball = two.makeCircle(two.width / 2, two.height / 2, radius)
   ball.noStroke()
 
   _.each(ball.vertices, function (v) {
@@ -118,14 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
     delta.copy(mouse).subSelf(ball.translation)
 
     _.each(ball.vertices, function (v, i) {
-      var dist = v.origin.distanceTo(delta)
-      var pct = dist / radius
+      const dist = v.origin.distanceTo(delta)
+      const pct = dist / radius
 
-      var x = delta.x * pct
-      var y = delta.y * pct
+      const x = delta.x * pct
+      const y = delta.y * pct
 
-      var destx = v.origin.x - x
-      var desty = v.origin.y - y
+      const destx = v.origin.x - x
+      const desty = v.origin.y - y
 
       v.x += (destx - v.x) * drag
       v.y += (desty - v.y) * drag

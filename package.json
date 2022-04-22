@@ -4,8 +4,8 @@
   "description": "A webring",
   "main": "assets/wwwidget.js",
   "scripts": {
-    "lint": "eslint assets/wwwidget.js assets/main.js || exit 0",
-    "build": "minify assets/wwwidget.js -d ."
+    "lint": "standard assets/wwwidget.js assets/main.js --verbose",
+    "build": "webpack --mode=production --progress --color --entry ./assets/wwwidget.js --output-filename wwwidget.js -o ."
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,7 @@
   },
   "homepage": "https://github.com/garrying/wwworkshop-webring#readme",
   "devDependencies": {
-    "babel-minify": "^0.5.1",
-    "babel-preset-minify": "^0.5.1",
-    "eslint": "^8.13.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-standard": "^4.1.0"
+    "standard": "^17.0.0",
+    "webpack-cli": "^4.9.2"
   }
 }
