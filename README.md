@@ -44,8 +44,8 @@ Adding sites to the webring is done by adding a new entry in [`./_data/sites.yml
 With [npm](https://www.npmjs.com/) installed:
 
 1. Install dependencies: `npm install`
-2. Lint `./assets/wwwidget.js` with [ESLint](https://eslint.org/): `npm run lint`
-3. Build `./assets/wwwidget.js` with [babel-minify](https://github.com/babel/minify): `npm run build`
+2. Lint `./assets/wwwidget.js` with [Standard](https://standardjs.com/): `npm run lint`
+3. Build `./assets/wwwidget.js` with [webpack](https://webpack.js.org/): `npm run build`
 
 ### License & Attribution
 
