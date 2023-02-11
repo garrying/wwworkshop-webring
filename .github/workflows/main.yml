@@ -20,7 +20,7 @@ jobs:
     - name: Build
       run: bundle exec jekyll build
     - name: Run tests
-      run: bundle exec htmlproofer ./_site --check-html
+      run: bundle exec htmlproofer ./_site
 
   npm-lint-build:
     runs-on: ubuntu-latest
