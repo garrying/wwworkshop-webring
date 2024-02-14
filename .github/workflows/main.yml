@@ -11,7 +11,7 @@ jobs:
         ruby-version: ['3.2']
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
@@ -26,11 +26,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 16.14.0
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4.0.2
       with:
-        node-version: 16.14.0
+        node-version: 20
     - run: npm install
     - run: npm run lint
     - run: npm run build
