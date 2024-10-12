@@ -9,3 +9,12 @@ updates:
         patterns:
           - "*"
         update-types: ["patch"]
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      patch-updates:
+        patterns:
+          - "*"
+        update-types: ["patch"]
