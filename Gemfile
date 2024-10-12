@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.3.3"
+gem "jekyll", "~> 4.3.4"
 gem "html-proofer"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
@@ -29,4 +29,4 @@ end
 
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.8"
