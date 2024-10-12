@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/garrying/wwworkshop-webring#readme",
   "devDependencies": {
-    "standard": "^17.1.0",
+    "standard": "^17.1.2",
     "webpack-cli": "^5.1.4"
   }
 }
